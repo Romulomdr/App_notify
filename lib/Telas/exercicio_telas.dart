@@ -1,5 +1,3 @@
-
-
 import "package:flutter/material.dart";
 
 class ExercicioTela extends StatelessWidget {
@@ -44,7 +42,7 @@ class ExercicioTela extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            Text("e aqui vai ser o espaço para preencher")
+            const Text("e aqui vai ser o espaço para preencher")
           ],
         ),
       )
