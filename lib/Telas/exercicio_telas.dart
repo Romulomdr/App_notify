@@ -25,8 +25,9 @@ class ExercicioTela extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(title: const Text("Barra Estilosa")),
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: Text("${exercicioModelo.nome} / ${exercicioModelo.treino}")),
       floatingActionButton: FloatingActionButton(onPressed: (){
         // ignore: avoid_print
         print("FOI PRESSIONADO");
@@ -35,15 +36,31 @@ class ExercicioTela extends StatelessWidget {
       child: const Icon(Icons.add),
       ),
 
-      body: Padding(
+      body: Container(
+        margin: const EdgeInsets.all(8.0),
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        decoration: BoxDecoration(
+          color: Colors.white, 
+          borderRadius: BorderRadius.circular(16),
+          ),
+        child: ListView(
           children: [
-            ElevatedButton(
-              onPressed: (){}, 
-              child: const Text("Enviar Foto")
+            SizedBox(
+              height: 50,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ElevatedButton(
+                    onPressed: (){}, 
+                    child: const Text("Enviar Foto")
+                  ),
+                  ElevatedButton(
+                    onPressed: (){}, 
+                    child: const Text("Tirar foto"))
+                ],
+              ),
             ),
+            const SizedBox(height: 8,),
             const Text(
               "Como Fazer?", 
               style: TextStyle(
@@ -51,9 +68,12 @@ class ExercicioTela extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            const Text(
-              "01010101010110101"),
-            const Divider(),
+            Text(
+              exercicioModelo.comoFazer),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Divider(color: Colors.black),
+            ),
             const Text(
               "Aqui vai ter uma configuração", 
               style: TextStyle(
@@ -61,7 +81,28 @@ class ExercicioTela extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            const Text("e aqui vai ser o espaço para preencher")
+            const SizedBox(height: 8,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(listaSentimentos.length, (index){
+                SentimentoModelo sentimentoAgora = listaSentimentos[index];
+                return ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(sentimentoAgora.sentindo), 
+                  subtitle: Text(sentimentoAgora.data),
+                  leading: const Icon(Icons.double_arrow_rounded),
+                  trailing: IconButton(
+                    icon: const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ),
+                    onPressed: (){
+                      print("DELETE ${sentimentoAgora.sentindo}");
+                     },
+                    ),
+                );  
+              }),
+            )
           ],
         ),
       )
