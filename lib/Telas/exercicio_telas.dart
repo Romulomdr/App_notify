@@ -27,7 +27,10 @@ class ExercicioTela extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
-        title: Text("${exercicioModelo.nome} / ${exercicioModelo.treino}")),
+        title: Text("${exercicioModelo.nome} / ${exercicioModelo.treino}"),
+        centerTitle: true,  
+        
+      ),
       floatingActionButton: FloatingActionButton(onPressed: (){
         // ignore: avoid_print
         print("FOI PRESSIONADO");
