@@ -25,7 +25,7 @@ class ExercicioTela extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: const Color(0xFF0A6D92),
       appBar: AppBar(
         title: Text("${exercicioModelo.nome} / ${exercicioModelo.treino}"),
         centerTitle: true,  

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notif_project/Telas/autenticacao_tela.dart';
 import 'package:notif_project/Telas/exercicio_telas.dart';
 
   void main(){
@@ -11,8 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: AutenticacaoTela(),
+    return MaterialApp(
+      home: ExercicioTela(),
     );
   }
 }
