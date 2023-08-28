@@ -7,18 +7,18 @@ class ExercicioTela extends StatelessWidget {
 
   final ExercicioModelo exercicioModelo = ExercicioModelo(
     id: "EX001", 
-    nome: "Remada Baixa", 
-    treino: "Treino A", 
-    comoFazer: "Segura a barra e puxa");
+    nome: "Bem vindo", 
+    treino: "Usuário", 
+    comoFazer: "Digite no seguinte formato: 0.00");
 
   final List<SentimentoModelo> listaSentimentos = [
     SentimentoModelo(
       id: "SE001", 
-      sentindo: "Dor no ombro", 
+      sentindo: "(Logo) Pix Recebido 0.00", 
       data: "2023-08-24"),
     SentimentoModelo(
       id: "SE002", 
-      sentindo: "Dor na perna esquerda", 
+      sentindo: "(Logo) Depósito Recebido 0.00", 
       data: "2023-08-23"),
   ];
 
@@ -55,17 +55,17 @@ class ExercicioTela extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: (){}, 
-                    child: const Text("Enviar Foto")
+                    child: const Text("Escolha Logo")
                   ),
                   ElevatedButton(
                     onPressed: (){}, 
-                    child: const Text("Tirar foto"))
+                    child: const Text("Confirmar"))
                 ],
               ),
             ),
             const SizedBox(height: 8,),
             const Text(
-              "Como Fazer?", 
+              "Valor Desejado?", 
               style: TextStyle(
                 fontWeight: FontWeight.bold, 
                 fontSize: 18,
@@ -78,7 +78,7 @@ class ExercicioTela extends StatelessWidget {
               child: Divider(color: Colors.black),
             ),
             const Text(
-              "Aqui vai ter uma configuração", 
+              "Exemplos", 
               style: TextStyle(
                 fontWeight: FontWeight.bold, 
                 fontSize: 18,

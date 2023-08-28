@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notif_project/_comum/minhas_cores.dart';
+import 'package:notif_project/componentes/decoracao_campo_autenticacao.dart';
 
 class AutenticacaoTela extends StatefulWidget {
   const AutenticacaoTela({super.key});
@@ -36,7 +37,7 @@ bool queroEntrar = true;
                     children: [
                       Center(child: Image.asset("assets/logo.png", height: 128)),
                       const Text(
-                        "Notify App",
+                        "Notify",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 48,
@@ -47,24 +48,26 @@ bool queroEntrar = true;
                       const SizedBox(
                         height: 32,
                       ),
-                      TextFormField(decoration: const InputDecoration(
-                        label: Text("E-mail")),
+                      TextFormField(
+                        decoration: getAuthenticationInputDecoration("E-mail"),
                       ),
-                      TextFormField(decoration: const InputDecoration(
-                        label: Text("Senha")),
+                      const SizedBox(height: 8),
+                      TextFormField(
+                        decoration: getAuthenticationInputDecoration("Senha"),
                         obscureText: true,
                       ),
+                      const SizedBox(height: 8),
                       Visibility(
                         visible: !queroEntrar,
                         child: Column(
                           children: [
-                            TextFormField(decoration: const InputDecoration(
-                            label: Text("Confirme Senha")),
+                            TextFormField(decoration: getAuthenticationInputDecoration("Confirme Senha"),
                             obscureText: true,
                             ),
-                            TextFormField(decoration: const InputDecoration(
-                            label: Text("Nome")),
+                            const SizedBox(height: 8),
+                            TextFormField(decoration: getAuthenticationInputDecoration("Nome"),
                             ),
+                            const SizedBox(height: 8),
                           ],
                         ),
                       ),
@@ -73,7 +76,10 @@ bool queroEntrar = true;
                       ),
                       ElevatedButton(
                         onPressed: (){}, 
-                        child: Text((queroEntrar)? "Entrar" : "Cadastrar")
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: MinhasCores.azulTopoGradiente,
+                        ),
+                        child: Text((queroEntrar)? "Entrar" : "Cadastrar"),
                       ),
                       const Divider(),
                       TextButton(
@@ -82,7 +88,11 @@ bool queroEntrar = true;
                             queroEntrar = !queroEntrar;
                           });
                         }, 
-                        child: const Text("Ainda não tem uma conta? Cadastre-se")
+                        child: const Text(
+                          "Ainda não tem uma conta? Cadastre-se", 
+                          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)
+                          )
+                        ),
                       )
                     ],
                   ),

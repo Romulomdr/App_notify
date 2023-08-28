@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notif_project/Telas/autenticacao_tela.dart';
+//import 'package:notif_project/Telas/exercicio_telas.dart';
 
   void main(){
     runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: AutenticacaoTela(),
+      //home: ExercicioTela()
     );
   }
 }
